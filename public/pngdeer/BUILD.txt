@@ -1,0 +1,11 @@
+pngdeer 8fff517b7d77920f3aa2bb537927435519606680
+built 2026-10-27T01:07:43Z
+wasm-bindgen 0.2.129
+rustc rustc 1.99.1 (58cf8f9c3 2026-10-13)
+
+26b1cc849f4b407e9ff2aa9edcf12e3747fb6c5b48dff1337e1e522096ad08c0  worker.js
+5576857680eb0372b10f04a00e0406af23edb4599da75d99d2f678f31799c3b4  pkg/pngdeer_wasm.js
+b5220b3bef0097832ebe3dc820881a0bb54ae295c8f51ee297f015f5ebcedaea  pkg/pngdeer_wasm_bg.wasm
+a5be1942f1cca09d1084d92aae68fdb55d321a5ea9cb926a3db7d86b8d81ad84  pkg-mt/pngdeer_wasm.js
+21398575b48afbb46e701479f966cc663f5ba5815461a57b73eee34847e257a6  pkg-mt/pngdeer_wasm_bg.wasm
+9801503f464f848c6c7405462fca9a5c721556904c5fee5ee0afcb0887ea1b7f  pkg-mt/snippets/wasm-bindgen-rayon-38edf6e439f6d70d/src/workerHelpers.no-bundler.js

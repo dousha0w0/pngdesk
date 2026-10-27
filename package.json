@@ -1,0 +1,31 @@
+{
+  "name": "pngdesk",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "A PNG compression workbench in the browser — pngdeer on WebAssembly, hosted on Cloudflare Workers",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "deploy": "pnpm build && wrangler deploy",
+    "dev:worker": "pnpm build && wrangler dev",
+    "wasm": "sh scripts/build-pngdeer.sh"
+  },
+  "dependencies": {
+    "pinia": "^3.0.0",
+    "vue": "^3.5.13",
+    "vue-i18n": "^11.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.0",
+    "@types/node": "^26.6.5",
+    "@vitejs/plugin-vue": "^6.0.0",
+    "tailwindcss": "^4.1.0",
+    "typescript": "^5.9.0",
+    "vite": "^7.0.0",
+    "vue-tsc": "^3.0.0",
+    "wrangler": "^4.0.0"
+  },
+  "packageManager": "pnpm@12.4.1"
+}

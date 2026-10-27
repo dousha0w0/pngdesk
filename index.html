@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>pngdesk · PNG 压缩工作台</title>
+    <meta
+      name="description"
+      content="用 pngdeer 在浏览器里压缩 PNG：自动挑选调色板与质量，图片不上传，Cloudflare Workers 托管。"
+    />
+    <meta name="theme-color" content="#f1f3f7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#191c21" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script>
+      // Replay the saved appearance before the first paint: no light flash on a dark session.
+      // src/lib/prefs.ts writes the same two keys and this class.
+      (() => {
+        try {
+          const mode = localStorage.getItem("pngdesk.theme") || "system";
+          const dark = mode === "dark" || (mode === "system" && matchMedia("(prefers-color-scheme: dark)").matches);
+          const root = document.documentElement;
+          root.classList.toggle("dark", dark);
+          root.style.colorScheme = dark ? "dark" : "light";
+          const palette = localStorage.getItem("pngdesk.palette");
+          if (palette && palette !== "neutral") root.classList.add("palette-" + palette);
+          const corners = localStorage.getItem("pngdesk.corners");
+          if (corners && corners !== "default") root.dataset.corners = corners;
+          const density = localStorage.getItem("pngdesk.density");
+          if (density === "compact") root.classList.add("row-density-compact");
+        } catch {
+          /* storage unavailable: defaults */
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
