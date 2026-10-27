@@ -10,6 +10,9 @@
 - **大图**：单张上限 40 MP（与 pngdeer 网页版一致），超出会明确拒绝，而不是把标签页跑挂。
 - **不上传**：没有后端逻辑，Worker 只做静态资源分发和响应头。
 
+在线预览：<https://dousha0w0.github.io/pngdesk/> —— GitHub Pages 只有静态文件，页面不跨源隔离，于是跑 4 个单线程 Worker；
+想要共享内存的多线程版本，按「部署到 Cloudflare Workers」一节部署即可。
+
 ## 界面
 
 沿用 DriveDesk 的设计语言，不引入第二套视觉：
